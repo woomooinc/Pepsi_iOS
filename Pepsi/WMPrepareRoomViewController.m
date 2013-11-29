@@ -51,6 +51,12 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[WMBlueToothController sharedController] setDelegate:nil];
+    [[UIAccelerometer sharedAccelerometer] setDelegate:nil];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
@@ -59,10 +65,9 @@
 #pragma mark - UIAccelerometerDelegate
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
-    
     if (!self.isPlaying) return;
     
-    NSLog(@"x:%f\ny:%f\nz:%f\n\n", acceleration.x, acceleration.y, acceleration.z);
+    //NSLog(@"x:%f\ny:%f\nz:%f\n\n", acceleration.x, acceleration.y, acceleration.z);
     
     BOOL gotScore = NO;
     if (acceleration.y >= 0.5f) {
@@ -90,7 +95,7 @@
 
 #pragma WMPrepareRoomDelegate
 - (void)clientDidJoin:(WMClient*)client {
-    // reload collection view
+    [self.collectionView reloadData];
 }
 
 // when broadcast finish, return an ordered array of client
@@ -99,7 +104,7 @@
     self.startButton.enabled = YES;
     self.navigationItem.leftBarButtonItem.enabled = YES;
     [self.collectionView reloadData];
-    // show winner effect
+    // show winner effect!
 }
 
 - (void)gameDidStart {

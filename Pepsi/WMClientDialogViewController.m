@@ -29,6 +29,7 @@
         UIViewController * vc = nav.topViewController;
         if ([vc isKindOfClass:[WMPrepareRoomViewController class]]) {
             WMPrepareRoomViewController * prepareRoomVC = (WMPrepareRoomViewController*)vc;
+            prepareRoomVC.isHost = NO;
         }
         
     }

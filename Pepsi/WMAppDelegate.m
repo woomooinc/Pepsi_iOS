@@ -8,6 +8,7 @@
 
 #import "WMAppDelegate.h"
 #import "WMBlueToothController.h"
+#import "WMClientDialogViewController.h"
 
 @implementation WMAppDelegate
 
@@ -25,4 +26,11 @@
     return YES;
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    // @howard recieve notification
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    WMClientDialogViewController * vc = (WMClientDialogViewController *)[storyboard instantiateViewControllerWithIdentifier:@"WMClientDialogViewController"];
+    self.window.rootViewController = vc;
+}
 @end

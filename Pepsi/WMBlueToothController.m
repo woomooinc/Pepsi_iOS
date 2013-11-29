@@ -45,10 +45,10 @@
 
 - (void)startGame {
     self.currentTime = 0;
-    [self.timer fire];
     if (self.delegate && [self.delegate respondsToSelector:@selector(gameDidStart)]) {
         [self.delegate gameDidStart];
     }
+    [self.timer fire];
 }
 
 - (void)joinWithClient:(WMClient*)client {
@@ -67,6 +67,7 @@
 }
 
 - (void)refresh {
+    NSLog(@"Current Time: %i", self.currentTime);
     self.currentTime++;
     if (self.currentTime >= self.gameDuration) {
         [self.timer invalidate];
