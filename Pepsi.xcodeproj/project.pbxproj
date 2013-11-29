@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120DDEFE1848795E000590D0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 120DDEFD1848795E000590D0 /* MainStoryboard.storyboard */; };
+		120DDF031848AA3A000590D0 /* WMHostInitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF021848AA3A000590D0 /* WMHostInitViewController.m */; };
+		120DDF061848BED0000590D0 /* WMPrepareRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF051848BED0000590D0 /* WMPrepareRoomViewController.m */; };
+		120DDF091848BF9F000590D0 /* WMPrepareRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF081848BF9F000590D0 /* WMPrepareRoom.m */; };
+		120DDF0D1848C4C5000590D0 /* WMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF0C1848C4C5000590D0 /* WMClient.m */; };
+		120DDF101848CC35000590D0 /* WMGamePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF0F1848CC35000590D0 /* WMGamePlayViewController.m */; };
+		120DDF171848D602000590D0 /* WMClientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF161848D602000590D0 /* WMClientView.m */; };
 		1252E4FE1848707500F1B345 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E4FD1848707500F1B345 /* Foundation.framework */; };
 		1252E5001848707500F1B345 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E4FF1848707500F1B345 /* CoreGraphics.framework */; };
 		1252E5021848707500F1B345 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E5011848707500F1B345 /* UIKit.framework */; };
@@ -19,6 +26,7 @@
 		1252E5191848707500F1B345 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E5011848707500F1B345 /* UIKit.framework */; };
 		1252E5211848707500F1B345 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1252E51F1848707500F1B345 /* InfoPlist.strings */; };
 		1252E5231848707500F1B345 /* PepsiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1252E5221848707500F1B345 /* PepsiTests.m */; };
+		F6139CDC48BD411A9A59DD09 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1FAA1E2E304C8D97151BF1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +40,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		120DDEFD1848795E000590D0 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		120DDF011848AA3A000590D0 /* WMHostInitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMHostInitViewController.h; sourceTree = "<group>"; };
+		120DDF021848AA3A000590D0 /* WMHostInitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMHostInitViewController.m; sourceTree = "<group>"; };
+		120DDF041848BED0000590D0 /* WMPrepareRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPrepareRoomViewController.h; sourceTree = "<group>"; };
+		120DDF051848BED0000590D0 /* WMPrepareRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPrepareRoomViewController.m; sourceTree = "<group>"; };
+		120DDF071848BF9F000590D0 /* WMPrepareRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPrepareRoom.h; sourceTree = "<group>"; };
+		120DDF081848BF9F000590D0 /* WMPrepareRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPrepareRoom.m; sourceTree = "<group>"; };
+		120DDF0B1848C4C5000590D0 /* WMClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMClient.h; sourceTree = "<group>"; };
+		120DDF0C1848C4C5000590D0 /* WMClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMClient.m; sourceTree = "<group>"; };
+		120DDF0E1848CC35000590D0 /* WMGamePlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMGamePlayViewController.h; sourceTree = "<group>"; };
+		120DDF0F1848CC35000590D0 /* WMGamePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMGamePlayViewController.m; sourceTree = "<group>"; };
+		120DDF151848D602000590D0 /* WMClientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMClientView.h; sourceTree = "<group>"; };
+		120DDF161848D602000590D0 /* WMClientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMClientView.m; sourceTree = "<group>"; };
 		1252E4FA1848707500F1B345 /* Pepsi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pepsi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1252E4FD1848707500F1B345 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1252E4FF1848707500F1B345 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +69,8 @@
 		1252E51E1848707500F1B345 /* PepsiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PepsiTests-Info.plist"; sourceTree = "<group>"; };
 		1252E5201848707500F1B345 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1252E5221848707500F1B345 /* PepsiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PepsiTests.m; sourceTree = "<group>"; };
+		7D1FAA1E2E304C8D97151BF1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		90208437C328444D918442FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +81,7 @@
 				1252E5001848707500F1B345 /* CoreGraphics.framework in Frameworks */,
 				1252E5021848707500F1B345 /* UIKit.framework in Frameworks */,
 				1252E4FE1848707500F1B345 /* Foundation.framework in Frameworks */,
+				F6139CDC48BD411A9A59DD09 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +98,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		120DDEFC18487946000590D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				120DDEFD1848795E000590D0 /* MainStoryboard.storyboard */,
+				120DDF151848D602000590D0 /* WMClientView.h */,
+				120DDF161848D602000590D0 /* WMClientView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		120DDF001848AA1F000590D0 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				120DDF011848AA3A000590D0 /* WMHostInitViewController.h */,
+				120DDF021848AA3A000590D0 /* WMHostInitViewController.m */,
+				120DDF041848BED0000590D0 /* WMPrepareRoomViewController.h */,
+				120DDF051848BED0000590D0 /* WMPrepareRoomViewController.m */,
+				120DDF0E1848CC35000590D0 /* WMGamePlayViewController.h */,
+				120DDF0F1848CC35000590D0 /* WMGamePlayViewController.m */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		120DDF0A1848BFAA000590D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				120DDF071848BF9F000590D0 /* WMPrepareRoom.h */,
+				120DDF081848BF9F000590D0 /* WMPrepareRoom.m */,
+				120DDF0B1848C4C5000590D0 /* WMClient.h */,
+				120DDF0C1848C4C5000590D0 /* WMClient.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		120DDF181848D764000590D0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		1252E4F11848707500F1B345 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +146,7 @@
 				1252E51C1848707500F1B345 /* PepsiTests */,
 				1252E4FC1848707500F1B345 /* Frameworks */,
 				1252E4FB1848707500F1B345 /* Products */,
+				90208437C328444D918442FA /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +166,7 @@
 				1252E4FF1848707500F1B345 /* CoreGraphics.framework */,
 				1252E5011848707500F1B345 /* UIKit.framework */,
 				1252E5161848707500F1B345 /* XCTest.framework */,
+				7D1FAA1E2E304C8D97151BF1 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,6 +174,9 @@
 		1252E5031848707500F1B345 /* Pepsi */ = {
 			isa = PBXGroup;
 			children = (
+				120DDF0A1848BFAA000590D0 /* Model */,
+				120DDF001848AA1F000590D0 /* View Controller */,
+				120DDEFC18487946000590D0 /* View */,
 				1252E50C1848707500F1B345 /* WMAppDelegate.h */,
 				1252E50D1848707500F1B345 /* WMAppDelegate.m */,
 				1252E50F1848707500F1B345 /* Images.xcassets */,
@@ -118,6 +188,7 @@
 		1252E5041848707500F1B345 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				120DDF181848D764000590D0 /* Images */,
 				1252E5051848707500F1B345 /* Pepsi-Info.plist */,
 				1252E5061848707500F1B345 /* InfoPlist.strings */,
 				1252E5091848707500F1B345 /* main.m */,
@@ -151,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1252E5261848707500F1B345 /* Build configuration list for PBXNativeTarget "Pepsi" */;
 			buildPhases = (
+				26B7600D3C5E462292133F59 /* Check Pods Manifest.lock */,
 				1252E4F61848707500F1B345 /* Sources */,
 				1252E4F71848707500F1B345 /* Frameworks */,
 				1252E4F81848707500F1B345 /* Resources */,
+				46B683E35F004E42A703B854 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				120DDEFE1848795E000590D0 /* MainStoryboard.storyboard in Resources */,
 				1252E5081848707500F1B345 /* InfoPlist.strings in Resources */,
 				1252E5101848707500F1B345 /* Images.xcassets in Resources */,
 			);
@@ -235,13 +309,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26B7600D3C5E462292133F59 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		46B683E35F004E42A703B854 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1252E4F61848707500F1B345 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1252E50E1848707500F1B345 /* WMAppDelegate.m in Sources */,
+				120DDF101848CC35000590D0 /* WMGamePlayViewController.m in Sources */,
+				120DDF031848AA3A000590D0 /* WMHostInitViewController.m in Sources */,
+				120DDF0D1848C4C5000590D0 /* WMClient.m in Sources */,
 				1252E50A1848707500F1B345 /* main.m in Sources */,
+				120DDF091848BF9F000590D0 /* WMPrepareRoom.m in Sources */,
+				120DDF061848BED0000590D0 /* WMPrepareRoomViewController.m in Sources */,
+				120DDF171848D602000590D0 /* WMClientView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +472,7 @@
 		};
 		1252E5271848707500F1B345 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90208437C328444D918442FA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -372,6 +486,7 @@
 		};
 		1252E5281848707500F1B345 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90208437C328444D918442FA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -444,6 +559,7 @@
 				1252E5281848707500F1B345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1252E5291848707500F1B345 /* Build configuration list for PBXNativeTarget "PepsiTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +568,7 @@
 				1252E52B1848707500F1B345 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
