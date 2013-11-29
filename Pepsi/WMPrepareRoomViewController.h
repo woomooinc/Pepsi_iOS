@@ -10,4 +10,5 @@
 
 @interface WMPrepareRoomViewController : UICollectionViewController
 @property(nonatomic, assign) NSInteger peopleCount;
+@property (nonatomic, assign) BOOL isHost;
 @end

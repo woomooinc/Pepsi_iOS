@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+// shake phone and play sound
+// real time update everyone's score and reorder
+//
+
 @interface WMGamePlayViewController : UICollectionViewController
 
 @end

@@ -20,6 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.picker selectRow:5 inComponent:0 animated:NO];
     self.peopleCount = [self.picker selectedRowInComponent:0];
 }
 
@@ -30,6 +31,7 @@
         if ([vc isKindOfClass:[WMPrepareRoomViewController class]]) {
             WMPrepareRoomViewController * prepareRoomVC = (WMPrepareRoomViewController*)vc;
             prepareRoomVC.peopleCount = self.peopleCount;
+            prepareRoomVC.isHost = YES;
         }
         
     }
