@@ -8,8 +8,10 @@
 
 #import "WMClientDialogViewController.h"
 #import "WMPrepareRoomViewController.h"
+#import "MBProgressHUD.h"
+#import "WMBlueToothController.h"
 
-@interface WMClientDialogViewController ()
+@interface WMClientDialogViewController () <WMBlueToothDelegate>
 
 @end
 
@@ -21,6 +23,14 @@
 {
     [super viewDidLoad];
     [self.invitorView configureViewWithAvatarURL:self.invitor.avatarPath name:self.invitor.name score:self.invitor.score placeholder:self.invitor.placeholder];
+    // @howard client broadcast to server?
+    WMBlueToothController * ble = [WMBlueToothController sharedController];
+    ble.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -35,9 +45,10 @@
     }
 }
 
-- (IBAction)onJoinButton:(id)sender {
-    // @howard will do sth to invitor
+- (void)serverDidReply {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     [self performSegueWithIdentifier:@"clientDialogViewGotoPrepareRoomView" sender:self];
 }
+
 
 @end
