@@ -24,6 +24,7 @@
 @protocol WMBlueToothDelegate <NSObject>
 @optional
 - (void)clientDidJoin:(WMClient*)client;
+- (void)serverDidReply;
 - (void)gameDidStart;
 - (void)gameDidFinish; // an ordered array of client
 - (void)didRefresh:(NSArray*)clientArray;

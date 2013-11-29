@@ -13,5 +13,4 @@
 @interface WMClientDialogViewController : UIViewController
 @property (nonatomic, strong) WMClient * invitor;
 @property (nonatomic, strong) IBOutlet WMClientView * invitorView;
-- (IBAction)onJoinButton:(id)sender;
 @end
