@@ -105,7 +105,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="RYs-8Y-hgJ">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="GDx-Fz-hpA">
+                        <barButtonItem key="leftBarButtonItem" title="Account" id="GDx-Fz-hpA">
                             <connections>
                                 <action selector="onChangeAccountButton:" destination="weM-Lg-woJ" id="eYn-AZ-glr"/>
                             </connections>
@@ -282,6 +282,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0kI-vI-J7Y"/>
+        <segue reference="985-h4-0ME"/>
     </inferredMetricsTieBreakers>
 </document>

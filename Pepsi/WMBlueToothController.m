@@ -70,7 +70,6 @@
 - (void)refresh {
     self.currentTime++;
     NSString * speechString = [NSString stringWithFormat:@"%i", self.currentTime];
-    NSLog(@"Current Time: %@", speechString);
     BOOL timesup = (self.currentTime >= self.gameDuration)?YES:NO;
     
     if (timesup) {
