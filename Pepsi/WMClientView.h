@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WMClientView : UICollectionViewCell
+@interface WMClientView : UIView
 @property (nonatomic, strong) IBOutlet UIImageView * avatarView;
 @property (nonatomic, strong) IBOutlet UILabel * nameLabel;
 @property (nonatomic, strong) IBOutlet UIActivityIndicatorView * loadingView;
-- (void)configureCellWithAvatarURL:(NSString*)avatar andName:(NSString*)name;
+- (void)configureViewWithAvatarURL:(NSString*)avatar name:(NSString*)name score:(NSInteger)score;
 @end

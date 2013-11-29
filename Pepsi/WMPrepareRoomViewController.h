@@ -11,4 +11,6 @@
 @interface WMPrepareRoomViewController : UICollectionViewController
 @property(nonatomic, assign) NSInteger peopleCount;
 @property (nonatomic, assign) BOOL isHost;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem * startButton;
+- (IBAction)onStartButton:(id)sender;
 @end

@@ -9,24 +9,28 @@
 #import <Foundation/Foundation.h>
 #import "WMClient.h"
 
-@protocol WMPrepareRoomDelegate <NSObject>
+// @howard handle BLE related here
+
+@protocol WMBlueToothDelegate <NSObject>
 @optional
 - (void)clientDidJoin:(WMClient*)client;
 - (void)gameDidStart;
-// when broadcast finish, return an ordered array of client
-- (void)roomServiceDidFinishWithClients:(NSArray*)clientArray;
+- (void)gameDidFinish; // an ordered array of client
+- (void)didRefresh:(NSArray*)clientArray;
 
 - (void)clientDidReject:(WMClient*)client;
 - (void)clientDidLeave:(WMClient*)client;
 @end
 
-@interface WMPrepareRoom : NSObject
+@interface WMBlueToothController : NSObject
 @property (nonatomic, strong) NSMutableArray * clients;
 @property (nonatomic, assign) CGFloat gameDuration;
 @property (nonatomic, assign) NSInteger minimumPeopleCount; // if minimumPeopleCount != 0, startGame automatically when self.clients.count >= peopleCount
-@property(nonatomic, weak) id<WMPrepareRoomDelegate> delegate;
-+ (id)defaultRoom;
+@property(nonatomic, weak) id<WMBlueToothDelegate> delegate;
++ (id)sharedController;
 - (void)startBroadcast;
 - (void)startGame;
 - (void)joinWithClient:(WMClient*)client;
+- (void)sendToServerWithResult:(NSInteger)score;
+- (NSInteger)totalScore;
 @end

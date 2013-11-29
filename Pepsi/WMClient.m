@@ -7,6 +7,7 @@
 //
 
 #import "WMClient.h"
+#import <QuartzCore/QuartzCore.h>
 
 NSString * const kWMName = @"kWMName";
 NSString * const kWMAvatar = @"kWMAvatar";
@@ -37,6 +38,10 @@ NSString * const kWMAvatar = @"kWMAvatar";
         _score = 0;
     }
     return self;
+}
+
+- (void)addScore {
+    self.score++;
 }
 
 @end

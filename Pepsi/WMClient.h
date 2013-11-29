@@ -17,4 +17,5 @@ extern NSString * const kWMAvatar;
 @property(nonatomic, strong) NSString * avatarPath;
 @property(nonatomic, assign) NSInteger score;
 + (id)currentClient;
+- (void)addScore;
 @end
