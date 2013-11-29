@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1252E4FE1848707500F1B345 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E4FD1848707500F1B345 /* Foundation.framework */; };
+		1252E5001848707500F1B345 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E4FF1848707500F1B345 /* CoreGraphics.framework */; };
+		1252E5021848707500F1B345 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E5011848707500F1B345 /* UIKit.framework */; };
+		1252E5081848707500F1B345 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1252E5061848707500F1B345 /* InfoPlist.strings */; };
+		1252E50A1848707500F1B345 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1252E5091848707500F1B345 /* main.m */; };
+		1252E50E1848707500F1B345 /* WMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1252E50D1848707500F1B345 /* WMAppDelegate.m */; };
+		1252E5101848707500F1B345 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1252E50F1848707500F1B345 /* Images.xcassets */; };
+		1252E5171848707500F1B345 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E5161848707500F1B345 /* XCTest.framework */; };
+		1252E5181848707500F1B345 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E4FD1848707500F1B345 /* Foundation.framework */; };
+		1252E5191848707500F1B345 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E5011848707500F1B345 /* UIKit.framework */; };
+		1252E5211848707500F1B345 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1252E51F1848707500F1B345 /* InfoPlist.strings */; };
+		1252E5231848707500F1B345 /* PepsiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1252E5221848707500F1B345 /* PepsiTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1252E51A1848707500F1B345 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1252E4F21848707500F1B345 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1252E4F91848707500F1B345;
+			remoteInfo = Pepsi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1252E4FA1848707500F1B345 /* Pepsi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pepsi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1252E4FD1848707500F1B345 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1252E4FF1848707500F1B345 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1252E5011848707500F1B345 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1252E5051848707500F1B345 /* Pepsi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pepsi-Info.plist"; sourceTree = "<group>"; };
+		1252E5071848707500F1B345 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1252E5091848707500F1B345 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1252E50B1848707500F1B345 /* Pepsi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pepsi-Prefix.pch"; sourceTree = "<group>"; };
+		1252E50C1848707500F1B345 /* WMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WMAppDelegate.h; sourceTree = "<group>"; };
+		1252E50D1848707500F1B345 /* WMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WMAppDelegate.m; sourceTree = "<group>"; };
+		1252E50F1848707500F1B345 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1252E5151848707500F1B345 /* PepsiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PepsiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1252E5161848707500F1B345 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1252E51E1848707500F1B345 /* PepsiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PepsiTests-Info.plist"; sourceTree = "<group>"; };
+		1252E5201848707500F1B345 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1252E5221848707500F1B345 /* PepsiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PepsiTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1252E4F71848707500F1B345 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252E5001848707500F1B345 /* CoreGraphics.framework in Frameworks */,
+				1252E5021848707500F1B345 /* UIKit.framework in Frameworks */,
+				1252E4FE1848707500F1B345 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252E5121848707500F1B345 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252E5171848707500F1B345 /* XCTest.framework in Frameworks */,
+				1252E5191848707500F1B345 /* UIKit.framework in Frameworks */,
+				1252E5181848707500F1B345 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1252E4F11848707500F1B345 = {
+			isa = PBXGroup;
+			children = (
+				1252E5031848707500F1B345 /* Pepsi */,
+				1252E51C1848707500F1B345 /* PepsiTests */,
+				1252E4FC1848707500F1B345 /* Frameworks */,
+				1252E4FB1848707500F1B345 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1252E4FB1848707500F1B345 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1252E4FA1848707500F1B345 /* Pepsi.app */,
+				1252E5151848707500F1B345 /* PepsiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1252E4FC1848707500F1B345 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1252E4FD1848707500F1B345 /* Foundation.framework */,
+				1252E4FF1848707500F1B345 /* CoreGraphics.framework */,
+				1252E5011848707500F1B345 /* UIKit.framework */,
+				1252E5161848707500F1B345 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1252E5031848707500F1B345 /* Pepsi */ = {
+			isa = PBXGroup;
+			children = (
+				1252E50C1848707500F1B345 /* WMAppDelegate.h */,
+				1252E50D1848707500F1B345 /* WMAppDelegate.m */,
+				1252E50F1848707500F1B345 /* Images.xcassets */,
+				1252E5041848707500F1B345 /* Supporting Files */,
+			);
+			path = Pepsi;
+			sourceTree = "<group>";
+		};
+		1252E5041848707500F1B345 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1252E5051848707500F1B345 /* Pepsi-Info.plist */,
+				1252E5061848707500F1B345 /* InfoPlist.strings */,
+				1252E5091848707500F1B345 /* main.m */,
+				1252E50B1848707500F1B345 /* Pepsi-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1252E51C1848707500F1B345 /* PepsiTests */ = {
+			isa = PBXGroup;
+			children = (
+				1252E5221848707500F1B345 /* PepsiTests.m */,
+				1252E51D1848707500F1B345 /* Supporting Files */,
+			);
+			path = PepsiTests;
+			sourceTree = "<group>";
+		};
+		1252E51D1848707500F1B345 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1252E51E1848707500F1B345 /* PepsiTests-Info.plist */,
+				1252E51F1848707500F1B345 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1252E4F91848707500F1B345 /* Pepsi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1252E5261848707500F1B345 /* Build configuration list for PBXNativeTarget "Pepsi" */;
+			buildPhases = (
+				1252E4F61848707500F1B345 /* Sources */,
+				1252E4F71848707500F1B345 /* Frameworks */,
+				1252E4F81848707500F1B345 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pepsi;
+			productName = Pepsi;
+			productReference = 1252E4FA1848707500F1B345 /* Pepsi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1252E5141848707500F1B345 /* PepsiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1252E5291848707500F1B345 /* Build configuration list for PBXNativeTarget "PepsiTests" */;
+			buildPhases = (
+				1252E5111848707500F1B345 /* Sources */,
+				1252E5121848707500F1B345 /* Frameworks */,
+				1252E5131848707500F1B345 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1252E51B1848707500F1B345 /* PBXTargetDependency */,
+			);
+			name = PepsiTests;
+			productName = PepsiTests;
+			productReference = 1252E5151848707500F1B345 /* PepsiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1252E4F21848707500F1B345 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WM;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = WOOMOO;
+				TargetAttributes = {
+					1252E5141848707500F1B345 = {
+						TestTargetID = 1252E4F91848707500F1B345;
+					};
+				};
+			};
+			buildConfigurationList = 1252E4F51848707500F1B345 /* Build configuration list for PBXProject "Pepsi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1252E4F11848707500F1B345;
+			productRefGroup = 1252E4FB1848707500F1B345 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1252E4F91848707500F1B345 /* Pepsi */,
+				1252E5141848707500F1B345 /* PepsiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1252E4F81848707500F1B345 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252E5081848707500F1B345 /* InfoPlist.strings in Resources */,
+				1252E5101848707500F1B345 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252E5131848707500F1B345 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252E5211848707500F1B345 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1252E4F61848707500F1B345 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252E50E1848707500F1B345 /* WMAppDelegate.m in Sources */,
+				1252E50A1848707500F1B345 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1252E5111848707500F1B345 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1252E5231848707500F1B345 /* PepsiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1252E51B1848707500F1B345 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1252E4F91848707500F1B345 /* Pepsi */;
+			targetProxy = 1252E51A1848707500F1B345 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1252E5061848707500F1B345 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1252E5071848707500F1B345 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1252E51F1848707500F1B345 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1252E5201848707500F1B345 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1252E5241848707500F1B345 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1252E5251848707500F1B345 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1252E5271848707500F1B345 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pepsi/Pepsi-Prefix.pch";
+				INFOPLIST_FILE = "Pepsi/Pepsi-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1252E5281848707500F1B345 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pepsi/Pepsi-Prefix.pch";
+				INFOPLIST_FILE = "Pepsi/Pepsi-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1252E52A1848707500F1B345 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pepsi.app/Pepsi";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pepsi/Pepsi-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PepsiTests/PepsiTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1252E52B1848707500F1B345 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pepsi.app/Pepsi";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pepsi/Pepsi-Prefix.pch";
+				INFOPLIST_FILE = "PepsiTests/PepsiTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1252E4F51848707500F1B345 /* Build configuration list for PBXProject "Pepsi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1252E5241848707500F1B345 /* Debug */,
+				1252E5251848707500F1B345 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1252E5261848707500F1B345 /* Build configuration list for PBXNativeTarget "Pepsi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1252E5271848707500F1B345 /* Debug */,
+				1252E5281848707500F1B345 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1252E5291848707500F1B345 /* Build configuration list for PBXNativeTarget "PepsiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1252E52A1848707500F1B345 /* Debug */,
+				1252E52B1848707500F1B345 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1252E4F21848707500F1B345 /* Project object */;
+}
