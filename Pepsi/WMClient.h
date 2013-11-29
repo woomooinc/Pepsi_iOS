@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
+extern NSString * const kWMName;
+extern NSString * const kWMAvatar;
+
 @interface WMClient : NSObject
 @property(nonatomic, strong) NSString * name;
-@property(nonatomic, strong) UIImage * avatar;
+@property(nonatomic, strong) NSString * avatarPath;
 @property(nonatomic, assign) NSInteger score;
++ (id)currentClient;
 @end
