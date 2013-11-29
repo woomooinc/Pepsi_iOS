@@ -41,6 +41,8 @@
 		1252E5191848707500F1B345 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E5011848707500F1B345 /* UIKit.framework */; };
 		1252E5211848707500F1B345 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1252E51F1848707500F1B345 /* InfoPlist.strings */; };
 		1252E5231848707500F1B345 /* PepsiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1252E5221848707500F1B345 /* PepsiTests.m */; };
+		3E2A6D7918493E0A003E0FB3 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2A6D7818493E0A003E0FB3 /* CoreBluetooth.framework */; };
+		3E2A6D7B18493E13003E0FB3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E2A6D7A18493E13003E0FB3 /* CoreLocation.framework */; };
 		F6139CDC48BD411A9A59DD09 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1FAA1E2E304C8D97151BF1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +104,8 @@
 		1252E51E1848707500F1B345 /* PepsiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PepsiTests-Info.plist"; sourceTree = "<group>"; };
 		1252E5201848707500F1B345 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1252E5221848707500F1B345 /* PepsiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PepsiTests.m; sourceTree = "<group>"; };
+		3E2A6D7818493E0A003E0FB3 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		3E2A6D7A18493E13003E0FB3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7D1FAA1E2E304C8D97151BF1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		90208437C328444D918442FA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +115,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E2A6D7B18493E13003E0FB3 /* CoreLocation.framework in Frameworks */,
+				3E2A6D7918493E0A003E0FB3 /* CoreBluetooth.framework in Frameworks */,
 				1252E5001848707500F1B345 /* CoreGraphics.framework in Frameworks */,
 				1252E5021848707500F1B345 /* UIKit.framework in Frameworks */,
 				1252E4FE1848707500F1B345 /* Foundation.framework in Frameworks */,
@@ -220,6 +226,8 @@
 		1252E4FC1848707500F1B345 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E2A6D7A18493E13003E0FB3 /* CoreLocation.framework */,
+				3E2A6D7818493E0A003E0FB3 /* CoreBluetooth.framework */,
 				1252E4FD1848707500F1B345 /* Foundation.framework */,
 				1252E4FF1848707500F1B345 /* CoreGraphics.framework */,
 				1252E5011848707500F1B345 /* UIKit.framework */,

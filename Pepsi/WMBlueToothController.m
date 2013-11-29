@@ -9,12 +9,35 @@
 #import "WMBlueToothController.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface WMBlueToothController()
+#import <CoreBluetooth/CoreBluetooth.h>
+#import <CoreLocation/CoreLocation.h>
+
+@interface WMBlueToothController()<CBPeripheralManagerDelegate, CLLocationManagerDelegate, CBCentralManagerDelegate>
 @property (nonatomic, strong) NSTimer * timer;
 @property (nonatomic, assign) NSInteger currentTime;
+@property (nonatomic, strong) CBPeripheralManager *peripheralManager;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CBCentralManager *centralManager;
+@property (nonatomic, assign) BOOL isRanging;
+
+
 @end
 
 @implementation WMBlueToothController
+
+- (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral
+{
+    
+}
+
+- (void)centralManagerDidUpdateState:(CBCentralManager *)central {
+    
+    // Service for connect with
+    [central scanForPeripheralsWithServices:@[kAppServiceUUID] options:@{CBCentralManagerScanOptionAllowDuplicatesKey:@YES}];
+}
+
+- (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI {
+}
 
 + (id)sharedController {
     static dispatch_once_t pred = 0;
@@ -34,12 +57,27 @@
         _minimumPeopleCount = 0;
         _currentTime = 0;
         _clients = [NSMutableArray array];
+        self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        [self startRanging];
     }
     return self;
 }
 
 - (void)startBroadcast {
     [self.clients removeAllObjects];
+    
+    NSUUID *uuid = kBeaconUUID;
+    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"com.zzb.beacons"];
+    NSDictionary *peripheralData = [region peripheralDataWithMeasuredPower:@(-59)];
+    
+    // The region's peripheral data contains the CoreBluetooth-specific data we need to advertise.
+    if(peripheralData)
+    {
+        [self.peripheralManager startAdvertising:peripheralData];
+//        [[GPUtility shareObj] initCentralManagerWithDelegate:self];
+    }
 }
 
 
@@ -88,4 +126,40 @@
         }
     }
 }
+
+-(void)startRanging {
+    
+    //Check if monitoring is available or not
+    if (![CLLocationManager isMonitoringAvailableForClass:[CLBeaconRegion class]]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Monitoring not available" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
+    
+    NSUUID *uuid = kBeaconUUID;
+    
+    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"com.zzb.beacons"];
+    
+    
+    region.notifyOnEntry = YES;
+    region.notifyOnExit = YES;
+    region.notifyEntryStateOnDisplay = YES;
+    [self.locationManager startMonitoringForRegion:region];
+    [self.locationManager startRangingBeaconsInRegion:region];
+    
+    self.isRanging = YES;
+}
+
+-(void)stopRanging {
+    self.isRanging = NO;
+    
+    NSUUID *uuid = kBeaconUUID;
+    
+    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"com.zzb.beacons"];
+    
+    
+    [_locationManager stopRangingBeaconsInRegion:region];
+    [_locationManager stopMonitoringForRegion:region];
+}
+
 @end
