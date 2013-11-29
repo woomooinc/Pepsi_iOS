@@ -138,14 +138,16 @@
     NSString * avatar;
     NSString * name;
     NSInteger score;
+    UIImage * placeholder;
     if ([currentClients count] >= indexPath.row + 1) {
         client = [currentClients objectAtIndex:indexPath.row];
         avatar = client.avatarPath;
         name = client.name;
         score = client.score;
+        placeholder = client.placeholder;
     }
 
-    [cell configureCellWithAvatarURL:avatar name:name score:score];
+    [cell configureCellWithAvatarURL:avatar name:name score:score placeholder:placeholder];
     
     if (self.hasWinner) {
         if (indexPath.row == 0) {

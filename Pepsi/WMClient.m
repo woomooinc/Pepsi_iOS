@@ -8,6 +8,7 @@
 
 #import "WMClient.h"
 #import <QuartzCore/QuartzCore.h>
+#include <stdlib.h>
 
 NSString * const kWMName = @"kWMName";
 NSString * const kWMAvatar = @"kWMAvatar";
@@ -36,6 +37,22 @@ NSString * const kWMAvatar = @"kWMAvatar";
         _name = @"Guest";
         _avatarPath = @"http://en.gravatar.com/userimage/551665/ff3340ca34886da6fe8309c0d3f1ceb4.jpg";
         _score = 0;
+        
+        int r = arc4random() % 4;
+        switch (r) {
+            case 0:
+                _placeholder = [UIImage imageNamed:@"howard"];
+                break;
+            case 1:
+                _placeholder = [UIImage imageNamed:@"shao"];
+                break;
+            case 2:
+                _placeholder = [UIImage imageNamed:@"ray"];
+                break;
+            case 3:
+                _placeholder = [UIImage imageNamed:@"jason"];
+                break;
+        }
     }
     return self;
 }

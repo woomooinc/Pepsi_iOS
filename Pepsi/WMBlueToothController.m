@@ -7,6 +7,7 @@
 //
 
 #import "WMBlueToothController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface WMBlueToothController()
 @property (nonatomic, strong) NSTimer * timer;
@@ -67,9 +68,19 @@
 }
 
 - (void)refresh {
-    NSLog(@"Current Time: %i", self.currentTime);
     self.currentTime++;
-    if (self.currentTime >= self.gameDuration) {
+    NSString * speechString = [NSString stringWithFormat:@"%i", self.currentTime];
+    NSLog(@"Current Time: %@", speechString);
+    BOOL timesup = (self.currentTime >= self.gameDuration)?YES:NO;
+    
+    if (timesup) {
+        speechString = @"Times Up!";
+    }
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:speechString];
+    AVSpeechSynthesizer *syn = [[AVSpeechSynthesizer alloc] init];
+    [syn speakUtterance:utterance];
+    
+    if (timesup) {
         [self.timer invalidate];
         // @howard client send data to server, server calculate and reply back the result
         // after get all required data from client:

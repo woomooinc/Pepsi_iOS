@@ -20,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.invitorView configureViewWithAvatarURL:self.invitor.avatarPath name:self.invitor.name score:self.invitor.score];
+    [self.invitorView configureViewWithAvatarURL:self.invitor.avatarPath name:self.invitor.name score:self.invitor.score placeholder:self.invitor.placeholder];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

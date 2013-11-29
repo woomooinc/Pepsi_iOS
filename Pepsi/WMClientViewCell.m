@@ -10,8 +10,8 @@
 
 @implementation WMClientViewCell
 
-- (void)configureCellWithAvatarURL:(NSString*)avatar name:(NSString*)name score:(NSInteger)score {
-    [self.view configureViewWithAvatarURL:avatar name:name score:score];
+- (void)configureCellWithAvatarURL:(NSString*)avatar name:(NSString*)name score:(NSInteger)score placeholder:(UIImage*)placeholder {
+    [self.view configureViewWithAvatarURL:avatar name:name score:score placeholder:placeholder];
 }
 
 - (void)showWinner {

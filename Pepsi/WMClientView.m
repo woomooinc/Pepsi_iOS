@@ -9,15 +9,13 @@
 #import "WMClientView.h"
 #import "UIImageView+WebCache.h"
 #import "WMBlueToothController.h"
-#include <stdlib.h>
 
 @interface WMClientView()
-@property(nonatomic, strong) UIImage * placeholder;
 @end
 
 @implementation WMClientView
 
-- (void)configureViewWithAvatarURL:(NSString*)avatar name:(NSString*)name score:(NSInteger)score {
+- (void)configureViewWithAvatarURL:(NSString*)avatar name:(NSString*)name score:(NSInteger)score placeholder:(UIImage*)placeholder {
     if (!name) {
         // keep waiting!
         self.loadingView.hidden = NO;
@@ -30,25 +28,8 @@
         [self.loadingView stopAnimating];
         self.nameLabel.text = name;
         
-        if (!self.placeholder) {
-            int r = arc4random() % 4;
-            switch (r) {
-                case 0:
-                    self.placeholder = [UIImage imageNamed:@"howard"];
-                    break;
-                case 1:
-                    self.placeholder = [UIImage imageNamed:@"shao"];
-                    break;
-                case 2:
-                    self.placeholder = [UIImage imageNamed:@"ray"];
-                    break;
-                case 3:
-                    self.placeholder = [UIImage imageNamed:@"jason"];
-                    break;
-            }
-        }
         [self.avatarView setImageWithURL:[NSURL URLWithString:avatar ]
-                        placeholderImage:self.placeholder
+                        placeholderImage:placeholder
                                completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
                                }];
         // calculate image scale

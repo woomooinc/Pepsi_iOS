@@ -11,7 +11,7 @@
 
 @interface WMClientViewCell : UICollectionViewCell
 @property (nonatomic, strong) IBOutlet WMClientView * view;
-- (void)configureCellWithAvatarURL:(NSString*)avatar name:(NSString*)name score:(NSInteger)score;
+- (void)configureCellWithAvatarURL:(NSString*)avatar name:(NSString*)name score:(NSInteger)score placeholder:(UIImage*)placeholder;
 - (void)showWinner;
 - (void)showLoser;
 @end
