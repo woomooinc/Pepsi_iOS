@@ -8,6 +8,7 @@
 
 #import "WMHostInitViewController.h"
 #import "WMPrepareRoomViewController.h"
+#import "WMClient.h"
 
 @interface WMHostInitViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 @property (nonatomic, assign) NSInteger peopleCount;
@@ -53,6 +54,13 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.peopleCount = row;
+}
+
+#pragma Action
+- (IBAction)onChangeAccountButton:(id)sender {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kWMName];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kWMAvatar];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

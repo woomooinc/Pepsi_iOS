@@ -12,7 +12,6 @@
 		120DDF061848BED0000590D0 /* WMPrepareRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF051848BED0000590D0 /* WMPrepareRoomViewController.m */; };
 		120DDF091848BF9F000590D0 /* WMBlueToothController.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF081848BF9F000590D0 /* WMBlueToothController.m */; };
 		120DDF0D1848C4C5000590D0 /* WMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF0C1848C4C5000590D0 /* WMClient.m */; };
-		120DDF101848CC35000590D0 /* WMGamePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF0F1848CC35000590D0 /* WMGamePlayViewController.m */; };
 		120DDF171848D602000590D0 /* WMClientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF161848D602000590D0 /* WMClientView.m */; };
 		120DDF1B1848E80A000590D0 /* WMClientDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF1A1848E80A000590D0 /* WMClientDialogViewController.m */; };
 		120DDF1E1848E8D4000590D0 /* WMClientViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF1D1848E8D4000590D0 /* WMClientViewCell.m */; };
@@ -28,6 +27,7 @@
 		120DDF3B18491454000590D0 /* ray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 120DDF3018491454000590D0 /* ray@2x.png */; };
 		120DDF3C18491454000590D0 /* shao.png in Resources */ = {isa = PBXBuildFile; fileRef = 120DDF3118491454000590D0 /* shao.png */; };
 		120DDF3D18491454000590D0 /* shao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 120DDF3218491454000590D0 /* shao@2x.png */; };
+		120DDF401849151F000590D0 /* WMIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF3F1849151F000590D0 /* WMIntroViewController.m */; };
 		1252E4FE1848707500F1B345 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E4FD1848707500F1B345 /* Foundation.framework */; };
 		1252E5001848707500F1B345 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E4FF1848707500F1B345 /* CoreGraphics.framework */; };
 		1252E5021848707500F1B345 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E5011848707500F1B345 /* UIKit.framework */; };
@@ -63,8 +63,6 @@
 		120DDF081848BF9F000590D0 /* WMBlueToothController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMBlueToothController.m; sourceTree = "<group>"; };
 		120DDF0B1848C4C5000590D0 /* WMClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMClient.h; sourceTree = "<group>"; };
 		120DDF0C1848C4C5000590D0 /* WMClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMClient.m; sourceTree = "<group>"; };
-		120DDF0E1848CC35000590D0 /* WMGamePlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMGamePlayViewController.h; sourceTree = "<group>"; };
-		120DDF0F1848CC35000590D0 /* WMGamePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMGamePlayViewController.m; sourceTree = "<group>"; };
 		120DDF151848D602000590D0 /* WMClientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMClientView.h; sourceTree = "<group>"; };
 		120DDF161848D602000590D0 /* WMClientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMClientView.m; sourceTree = "<group>"; };
 		120DDF191848E80A000590D0 /* WMClientDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMClientDialogViewController.h; sourceTree = "<group>"; };
@@ -83,6 +81,8 @@
 		120DDF3018491454000590D0 /* ray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ray@2x.png"; sourceTree = "<group>"; };
 		120DDF3118491454000590D0 /* shao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shao.png; sourceTree = "<group>"; };
 		120DDF3218491454000590D0 /* shao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shao@2x.png"; sourceTree = "<group>"; };
+		120DDF3E1849151F000590D0 /* WMIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMIntroViewController.h; sourceTree = "<group>"; };
+		120DDF3F1849151F000590D0 /* WMIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMIntroViewController.m; sourceTree = "<group>"; };
 		1252E4FA1848707500F1B345 /* Winner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Winner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1252E4FD1848707500F1B345 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1252E4FF1848707500F1B345 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,10 +147,10 @@
 				120DDF021848AA3A000590D0 /* WMHostInitViewController.m */,
 				120DDF041848BED0000590D0 /* WMPrepareRoomViewController.h */,
 				120DDF051848BED0000590D0 /* WMPrepareRoomViewController.m */,
-				120DDF0E1848CC35000590D0 /* WMGamePlayViewController.h */,
-				120DDF0F1848CC35000590D0 /* WMGamePlayViewController.m */,
 				120DDF191848E80A000590D0 /* WMClientDialogViewController.h */,
 				120DDF1A1848E80A000590D0 /* WMClientDialogViewController.m */,
+				120DDF3E1849151F000590D0 /* WMIntroViewController.h */,
+				120DDF3F1849151F000590D0 /* WMIntroViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -414,7 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1252E50E1848707500F1B345 /* WMAppDelegate.m in Sources */,
-				120DDF101848CC35000590D0 /* WMGamePlayViewController.m in Sources */,
+				120DDF401849151F000590D0 /* WMIntroViewController.m in Sources */,
 				120DDF031848AA3A000590D0 /* WMHostInitViewController.m in Sources */,
 				120DDF0D1848C4C5000590D0 /* WMClient.m in Sources */,
 				120DDF1B1848E80A000590D0 /* WMClientDialogViewController.m in Sources */,

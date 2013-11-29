@@ -13,4 +13,6 @@
 @property (nonatomic, assign) BOOL isHost;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem * startButton;
 - (IBAction)onStartButton:(id)sender;
+- (IBAction)onCancelButton:(id)sender;
+
 @end

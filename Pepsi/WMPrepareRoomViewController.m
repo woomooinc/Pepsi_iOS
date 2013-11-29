@@ -39,11 +39,13 @@
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &_shakeSound);
     
     if (self.isHost) {
+        self.navigationItem.leftBarButtonItem.enabled = YES;
         self.startButton.enabled = YES;
         ble.minimumPeopleCount = self.peopleCount;
         [ble startBroadcast];
         [ble joinWithClient:[WMClient currentClient]];
     } else {
+        self.navigationItem.leftBarButtonItem.enabled = NO;
         self.startButton.enabled = NO;
         self.peopleCount = [ble minimumPeopleCount];
     }
@@ -95,6 +97,7 @@
 - (void)gameDidFinish {
     self.isPlaying = NO;
     self.startButton.enabled = YES;
+    self.navigationItem.leftBarButtonItem.enabled = YES;
     [self.collectionView reloadData];
     // show winner effect
 }
@@ -105,6 +108,7 @@
     
     self.isPlaying = YES;
     self.startButton.enabled = NO;
+    self.navigationItem.leftBarButtonItem.enabled = NO;
 }
 
 - (void)didRefresh:(NSArray *)clientArray {
@@ -142,6 +146,11 @@
 #pragma IBAction
 - (IBAction)onStartButton:(id)sender {
     [[WMBlueToothController sharedController] startGame];
+}
+
+- (IBAction)onCancelButton:(id)sender {
+//    [[WMBlueToothController sharedController] cancel];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

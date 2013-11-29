@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="863" y="-172"/>
         </scene>
-        <!--View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="OAc-jB-eFd">
             <objects>
-                <viewController id="5Pu-kV-biz" sceneMemberID="viewController">
+                <viewController id="5Pu-kV-biz" customClass="WMIntroViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kZ9-ZB-4g6"/>
                         <viewControllerLayoutGuide type="bottom" id="gLa-I3-ezV"/>
@@ -36,27 +36,29 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhO-qv-NKS">
-                                        <rect key="frame" x="20" y="269" width="280" height="30"/>
+                                        <rect key="frame" x="20" y="165" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bs-Kw-L34">
-                                        <rect key="frame" x="254" y="307" width="31" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Skip">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
                                         <connections>
-                                            <segue destination="weM-Lg-woJ" kind="push" id="aQT-VL-nfl"/>
+                                            <outlet property="delegate" destination="5Pu-kV-biz" id="C03-bd-Sfm"/>
                                         </connections>
-                                    </button>
+                                    </textField>
                                 </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4xR-Ro-eM7"/>
+                    <navigationItem key="navigationItem" id="4xR-Ro-eM7">
+                        <barButtonItem key="rightBarButtonItem" title="Skip" id="3HW-bX-yk9">
+                            <connections>
+                                <segue destination="weM-Lg-woJ" kind="push" identifier="introViewGotoHostIntiView" id="2iY-41-G3k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="bhO-qv-NKS" id="mna-rK-mzO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LjD-IO-Z9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,7 +97,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RYs-8Y-hgJ"/>
+                    <navigationItem key="navigationItem" id="RYs-8Y-hgJ">
+                        <barButtonItem key="leftBarButtonItem" title="Change Account" id="GDx-Fz-hpA">
+                            <connections>
+                                <action selector="onChangeAccountButton:" destination="weM-Lg-woJ" id="eYn-AZ-glr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="picker" destination="dhA-BV-wW3" id="E8Z-wi-Fd8"/>
                     </connections>
@@ -240,6 +248,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Lobby" id="JVq-uw-i8K">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="KEU-N3-CRj">
+                            <connections>
+                                <action selector="onCancelButton:" destination="QTf-jP-iJu" id="Iek-UG-7Ne"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Start" id="Rm0-QB-1lC">
                             <connections>
                                 <action selector="onStartButton:" destination="QTf-jP-iJu" id="HRn-eA-AGe"/>
@@ -261,6 +274,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0kI-vI-J7Y"/>
+        <segue reference="985-h4-0ME"/>
     </inferredMetricsTieBreakers>
 </document>

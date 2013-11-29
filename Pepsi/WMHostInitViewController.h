@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WMHostInitViewController : UIViewController
+- (IBAction)onChangeAccountButton:(id)sender;
 @end
