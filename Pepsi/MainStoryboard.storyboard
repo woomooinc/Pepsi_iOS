@@ -214,27 +214,43 @@
                                     <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FHz-n5-Hwn" customClass="WMClientView">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHz-n5-Hwn" customClass="WMClientView">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="muf-to-6eT">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="muf-to-6eT">
                                                     <rect key="frame" x="10" y="8" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TZc-hw-sq6">
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TZc-hw-sq6">
                                                     <rect key="frame" x="30" y="28" width="20" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </activityIndicatorView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="JUh-bG-ELD">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="JUh-bG-ELD">
                                                     <rect key="frame" x="0.0" y="76" width="80" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Bs9-0S-58h"/>
+                                                        <constraint firstAttribute="width" constant="80" id="HV2-S5-PfZ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="JUh-bG-ELD" firstAttribute="top" secondItem="FHz-n5-Hwn" secondAttribute="top" constant="76" id="7Cf-ax-nJw"/>
+                                                <constraint firstItem="JUh-bG-ELD" firstAttribute="centerX" secondItem="muf-to-6eT" secondAttribute="centerX" id="KgN-rr-RzK"/>
+                                                <constraint firstItem="JUh-bG-ELD" firstAttribute="top" secondItem="muf-to-6eT" secondAttribute="bottom" constant="8" id="Mue-6j-cxP"/>
+                                                <constraint firstAttribute="trailing" secondItem="muf-to-6eT" secondAttribute="trailing" constant="10" id="OwO-1E-i6c"/>
+                                                <constraint firstItem="muf-to-6eT" firstAttribute="leading" secondItem="FHz-n5-Hwn" secondAttribute="leading" constant="10" id="b7v-E1-KqC"/>
+                                                <constraint firstItem="muf-to-6eT" firstAttribute="top" secondItem="FHz-n5-Hwn" secondAttribute="top" constant="8" id="gKh-Vo-Gg6"/>
+                                                <constraint firstAttribute="bottom" secondItem="JUh-bG-ELD" secondAttribute="bottom" constant="3" id="ktg-MR-zWb"/>
+                                                <constraint firstItem="JUh-bG-ELD" firstAttribute="centerX" secondItem="TZc-hw-sq6" secondAttribute="centerX" id="nWS-IT-RYZ"/>
+                                                <constraint firstItem="TZc-hw-sq6" firstAttribute="centerY" secondItem="muf-to-6eT" secondAttribute="centerY" id="pwz-rw-NpC"/>
+                                                <constraint firstItem="JUh-bG-ELD" firstAttribute="leading" secondItem="FHz-n5-Hwn" secondAttribute="leading" id="sSB-8F-Noy"/>
+                                            </constraints>
                                             <connections>
                                                 <outlet property="avatarView" destination="muf-to-6eT" id="vmc-QV-t7Y"/>
                                                 <outlet property="loadingView" destination="TZc-hw-sq6" id="s34-4t-ehh"/>
@@ -245,6 +261,10 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="FHz-n5-Hwn" firstAttribute="leading" secondItem="cBL-xt-LFF" secondAttribute="leading" id="LHc-sz-Cga"/>
+                                    <constraint firstItem="FHz-n5-Hwn" firstAttribute="top" secondItem="cBL-xt-LFF" secondAttribute="top" id="jaN-ZV-xOv"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="view" destination="FHz-n5-Hwn" id="rzK-pb-voL"/>
                                 </connections>

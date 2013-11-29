@@ -49,13 +49,27 @@
 }
 
 - (void)showWinner {
-    //
+    
 }
 
 - (void)showLoser {
-    UIImage * image = self.avatarView.image;
-    self.avatarView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.avatarView.tintColor = [UIColor grayColor];
+    CIImage *beginImage = [CIImage imageWithCGImage:self.avatarView.image.CGImage];
+    CIContext *context = [CIContext contextWithOptions:nil];
+    
+    CIFilter *exposure = [CIFilter filterWithName:@"CIExposureAdjust"
+                                    keysAndValues:kCIInputImageKey, beginImage, @"inputEV", [NSNumber numberWithFloat:0.8], nil];
+    CIImage *exposuredImage = [exposure outputImage];
+    
+    CIFilter *saturation = [CIFilter filterWithName:@"CIColorControls"
+                                      keysAndValues:kCIInputImageKey, exposuredImage, @"inputSaturation", [NSNumber numberWithFloat:0.0], nil];
+    CIImage *outputImage = [saturation outputImage];
+    
+    CGImageRef cgimg =
+    [context createCGImage:outputImage fromRect:[outputImage extent]];
+    UIImage *filterImage = [UIImage imageWithCGImage:cgimg];
+    
+    CGImageRelease(cgimg);
+    self.avatarView.image = filterImage;
 }
 
 @end
