@@ -9,6 +9,11 @@
 #import "WMClientView.h"
 #import "UIImageView+WebCache.h"
 #import "WMBlueToothController.h"
+#include <stdlib.h>
+
+@interface WMClientView()
+@property(nonatomic, strong) UIImage * placeholder;
+@end
 
 @implementation WMClientView
 
@@ -23,11 +28,27 @@
     else {
         self.loadingView.hidden = YES;
         [self.loadingView stopAnimating];
-        
         self.nameLabel.text = name;
-        UIImage * placeholder = [UIImage imageNamed:@"howard"];
+        
+        if (!self.placeholder) {
+            int r = arc4random() % 4;
+            switch (r) {
+                case 0:
+                    self.placeholder = [UIImage imageNamed:@"howard"];
+                    break;
+                case 1:
+                    self.placeholder = [UIImage imageNamed:@"shao"];
+                    break;
+                case 2:
+                    self.placeholder = [UIImage imageNamed:@"ray"];
+                    break;
+                case 3:
+                    self.placeholder = [UIImage imageNamed:@"jason"];
+                    break;
+            }
+        }
         [self.avatarView setImageWithURL:[NSURL URLWithString:avatar ]
-                        placeholderImage:placeholder
+                        placeholderImage:self.placeholder
                                completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
                                }];
         
@@ -45,6 +66,10 @@
     self.avatarView.layer.masksToBounds = YES;
     
     [self layoutIfNeeded];
+}
+
+- (void)showWinner {
+    //
 }
 
 @end

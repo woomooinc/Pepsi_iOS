@@ -16,6 +16,7 @@
 @property (nonatomic) SystemSoundID shakeSound;
 @property (nonatomic, assign) BOOL isUp;
 @property (nonatomic, assign) BOOL isDown;
+@property (nonatomic, assign) BOOL hasWinner;
 @end
 
 @implementation WMPrepareRoomViewController
@@ -29,6 +30,7 @@
     accel.delegate = self;
     accel.updateInterval = 0.3f;
     
+    self.hasWinner = NO;
     self.isPlaying = NO;
     WMBlueToothController * ble = [WMBlueToothController sharedController];
     ble.delegate = self;
@@ -103,11 +105,18 @@
     self.isPlaying = NO;
     self.startButton.enabled = YES;
     self.navigationItem.leftBarButtonItem.enabled = YES;
+    self.hasWinner = YES;
     [self.collectionView reloadData];
     // show winner effect!
+    
+    WMBlueToothController * ble = [WMBlueToothController sharedController];
+    if ([WMClient currentClient] == [[ble clients] objectAtIndex:0]) {
+        // make sound
+    }
 }
 
 - (void)gameDidStart {
+    self.hasWinner = NO;
     self.peopleCount = [[[WMBlueToothController sharedController] clients] count];
     [self.collectionView reloadData];
     
@@ -137,6 +146,10 @@
     }
 
     [cell configureCellWithAvatarURL:avatar name:name score:score];
+    
+    if (self.hasWinner && indexPath.row == 0) {
+        [cell showWinner];
+    }
     return cell;
 }
 
@@ -146,6 +159,16 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
+}
+
+#pragma mark --
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.hasWinner && 0 == indexPath.row) {
+        return CGSizeMake(280, 350);
+    }
+    else {
+        return CGSizeMake(80, 100);
+    }
 }
 
 #pragma IBAction

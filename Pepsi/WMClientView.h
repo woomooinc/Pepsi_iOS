@@ -13,4 +13,5 @@
 @property (nonatomic, strong) IBOutlet UILabel * nameLabel;
 @property (nonatomic, strong) IBOutlet UIActivityIndicatorView * loadingView;
 - (void)configureViewWithAvatarURL:(NSString*)avatar name:(NSString*)name score:(NSInteger)score;
+- (void)showWinner;
 @end

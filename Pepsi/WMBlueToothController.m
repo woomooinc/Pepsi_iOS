@@ -33,7 +33,6 @@
         _minimumPeopleCount = 0;
         _currentTime = 0;
         _clients = [NSMutableArray array];
-        _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh)  userInfo:nil repeats:YES];
     }
     return self;
 }
@@ -48,6 +47,7 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(gameDidStart)]) {
         [self.delegate gameDidStart];
     }
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh)  userInfo:nil repeats:YES];
     [self.timer fire];
 }
 

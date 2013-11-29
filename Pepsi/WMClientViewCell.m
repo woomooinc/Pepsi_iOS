@@ -11,7 +11,6 @@
 @implementation WMClientViewCell
 
 - (void)configureCellWithAvatarURL:(NSString*)avatar name:(NSString*)name score:(NSInteger)score {
-    
     [self.view configureViewWithAvatarURL:avatar name:name score:score];
 }
 @end
