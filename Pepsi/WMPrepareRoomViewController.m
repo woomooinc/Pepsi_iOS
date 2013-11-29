@@ -147,8 +147,12 @@
 
     [cell configureCellWithAvatarURL:avatar name:name score:score];
     
-    if (self.hasWinner && indexPath.row == 0) {
-        [cell showWinner];
+    if (self.hasWinner) {
+        if (indexPath.row == 0) {
+            [cell showWinner];
+        } else {
+            [cell showLoser];
+        }
     }
     return cell;
 }

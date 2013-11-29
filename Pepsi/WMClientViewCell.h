@@ -13,4 +13,5 @@
 @property (nonatomic, strong) IBOutlet WMClientView * view;
 - (void)configureCellWithAvatarURL:(NSString*)avatar name:(NSString*)name score:(NSInteger)score;
 - (void)showWinner;
+- (void)showLoser;
 @end

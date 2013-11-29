@@ -13,4 +13,12 @@
 - (void)configureCellWithAvatarURL:(NSString*)avatar name:(NSString*)name score:(NSInteger)score {
     [self.view configureViewWithAvatarURL:avatar name:name score:score];
 }
+
+- (void)showWinner {
+    [self.view showWinner];
+}
+
+- (void)showLoser {
+    [self.view showLoser];
+}
 @end

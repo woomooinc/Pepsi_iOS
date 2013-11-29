@@ -51,7 +51,6 @@
                         placeholderImage:self.placeholder
                                completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
                                }];
-        
         // calculate image scale
         /*
         WMBlueToothController * ble = [WMBlueToothController sharedController];
@@ -70,6 +69,12 @@
 
 - (void)showWinner {
     //
+}
+
+- (void)showLoser {
+    UIImage * image = self.avatarView.image;
+    self.avatarView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.avatarView.tintColor = [UIColor grayColor];
 }
 
 @end
