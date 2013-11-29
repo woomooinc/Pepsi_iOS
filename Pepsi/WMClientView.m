@@ -7,25 +7,27 @@
 //
 
 #import "WMClientView.h"
+#import "UIImageView+WebCache.h"
 
 @implementation WMClientView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+- (void)configureCellWithAvatarURL:(NSString*)avatar andName:(NSString*)name {
+    if (!name) {
+        // keep waiting!
+        self.loadingView.hidden = NO;
+        [self.loadingView startAnimating];
+        self.nameLabel.text = @"Waiting...";
     }
-    return self;
+    else {
+        self.loadingView.hidden = YES;
+        [self.loadingView stopAnimating];
+        
+        [self.avatarView setImageWithURL:[NSURL URLWithString:avatar ]
+                        placeholderImage:[UIImage imageNamed:@"howard"]
+                               completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+                               }];
+        self.nameLabel.text = name;
+    }
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
