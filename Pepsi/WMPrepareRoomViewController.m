@@ -10,6 +10,7 @@
 #import "WMBlueToothController.h"
 #import "WMClientViewCell.h"
 #import <AudioToolbox/AudioServices.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface WMPrepareRoomViewController () <WMBlueToothDelegate, UIAccelerometerDelegate>
 @property (nonatomic, assign) BOOL isPlaying;
@@ -139,6 +140,10 @@
     self.isPlaying = YES;
     self.startButton.enabled = NO;
     self.navigationItem.leftBarButtonItem.enabled = NO;
+    
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Game start, shake your iPhone now!"];
+    AVSpeechSynthesizer *syn = [[AVSpeechSynthesizer alloc] init];
+    [syn speakUtterance:utterance];
 }
 
 - (void)didRefresh:(NSArray *)clientArray {
