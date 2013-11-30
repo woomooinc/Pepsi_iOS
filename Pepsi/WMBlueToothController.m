@@ -164,6 +164,12 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(gameDidStart)]) {
         [self.delegate gameDidStart];
     }
+    
+    [self performSelector:@selector(startToRefreshTimer) withObject:nil afterDelay:5.0f];
+
+}
+
+- (void)startToRefreshTimer {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(refresh)  userInfo:nil repeats:YES];
     [self.timer fire];
 }
@@ -209,12 +215,14 @@
             // Send all scores to client
             NSMutableString *scoreAndNameString = [[NSMutableString alloc] initWithString:@"score"];
             for (WMClient *client in self.clients) {
-                [scoreAndNameString appendFormat:@"::%@-%ld", client.name, client.score];
+                [scoreAndNameString appendFormat:@"::%@-%ld", client.name, (long)client.score];
             }
             [self sendMessage:scoreAndNameString];
         }
         else {
             // Send only client self to server
+            NSString *scoreString = [[NSString alloc] initWithFormat:@"selfscore::%@-:%d", self.currentClient.name, self.currentClient.score];
+            [self sendMessage:scoreString];
         }
     }
 }
@@ -278,6 +286,14 @@
                         }
                         [self sendMessage:[NSString stringWithString:str]];
                     }
+                    if ([msg hasPrefix:@"selfscore::"]) {
+                        NSArray *a = [msg componentsSeparatedByString:@"::"];
+                        NSArray *b = [[a lastObject] componentsSeparatedByString:@"-"];
+                        client.score = [[b lastObject] integerValue];
+                        NSLog(@"new: score %d", [[b lastObject] integerValue]);
+                    }
+                    
+                    
                     [client.messageToReceive setLength:0];
                 }
                 else {
