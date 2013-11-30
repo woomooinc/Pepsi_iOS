@@ -114,7 +114,7 @@
     //NSLog(@"x:%f\ny:%f\nz:%f\n\n", acceleration.x, acceleration.y, acceleration.z);
     
     BOOL gotScore = NO;
-    if (acceleration.y >= 0.5f) {
+    if (acceleration.y >= 0.1f) {
         self.isUp = YES;
         if (self.isDown) {
             gotScore = YES;
@@ -122,7 +122,7 @@
         self.isDown = NO;
     }
     
-    if (acceleration.y <= -0.5f) {
+    if (acceleration.y <= -0.1f) {
         self.isDown = YES;
         if (self.isUp) {
             gotScore = YES;

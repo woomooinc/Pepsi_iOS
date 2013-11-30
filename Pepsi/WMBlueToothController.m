@@ -193,7 +193,7 @@
     self.currentTime++;
     NSInteger countdown = self.gameDuration - self.currentTime;
     NSString * speechString = [NSString stringWithFormat:@"%li", (long)countdown];
-    BOOL timesup = (0 >= countdown)?YES:NO;
+    BOOL timesup = (self.currentTime > self.gameDuration)?YES:NO;
     
     if (timesup) {
         speechString = @"Times Up!";
