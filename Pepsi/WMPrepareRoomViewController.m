@@ -84,6 +84,22 @@
     [self.collectionView reloadData];
 }
 
+- (void)didGetAllUserScore:(NSString *)scoreString {
+    WMBlueToothController * ble = [WMBlueToothController sharedController];
+
+    NSArray *a = [scoreString componentsSeparatedByString:@"::"];
+    for (int i=1; i<[a count]; i++) {
+        NSArray *b = [[a objectAtIndex:i] componentsSeparatedByString:@"-"];
+        
+        for (WMClient *client in ble.clients) {
+            if ([client.name isEqualToString:[b objectAtIndex:0]]) {
+                client.score = [[b objectAtIndex:1] intValue];
+            }
+        }
+    }
+}
+
+
 #pragma mark - UIAccelerometerDelegate
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {

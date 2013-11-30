@@ -164,7 +164,7 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(gameDidStart)]) {
         [self.delegate gameDidStart];
     }
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh)  userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(refresh)  userInfo:nil repeats:YES];
     [self.timer fire];
 }
 
@@ -202,6 +202,19 @@
         // after get all required data from client:
         if (self.delegate && [self.delegate respondsToSelector:@selector(gameDidFinish)]) {
             [self.delegate gameDidFinish];
+        }
+    }
+    else {
+        if (self.isServer) {
+            // Send all scores to client
+            NSMutableString *scoreAndNameString = [[NSMutableString alloc] initWithString:@"score"];
+            for (WMClient *client in self.clients) {
+                [scoreAndNameString appendFormat:@"::%@-%ld", client.name, client.score];
+            }
+            [self sendMessage:scoreAndNameString];
+        }
+        else {
+            // Send only client self to server
         }
     }
 }
@@ -445,6 +458,9 @@
                 
                 if ([message hasPrefix:@"user::"]) {
                     [self.delegate didGetAllUser:message];
+                }
+                if ([message hasPrefix:@"score::"]) {
+                    [self.delegate didGetAllUserScore:message];
                 }
                 
                 [self.messageToReceive setLength:0];
