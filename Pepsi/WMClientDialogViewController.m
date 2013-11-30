@@ -49,6 +49,7 @@
 - (void)serverDidReply {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [self performSegueWithIdentifier:@"clientDialogViewGotoPrepareRoomView" sender:self];
+    [[WMBlueToothController sharedController] startGame];
 }
 
 

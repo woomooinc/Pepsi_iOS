@@ -82,6 +82,7 @@
         client.name = [a objectAtIndex:i];
         [ble.clients addObject:client];
         if ([client.name isEqualToString:[[UIDevice currentDevice] name]] ) {
+            NSLog(@"equal name:%@", client.name);
             ble.currentClient = client;
         }
     }
@@ -102,13 +103,14 @@
             }
         }
     }
+    [self.collectionView reloadData];
 }
 
 
 #pragma mark - UIAccelerometerDelegate
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
-    if (!self.isPlaying) return;
+//    if (!self.isPlaying) return;
     
     WMBlueToothController * ble = [WMBlueToothController sharedController];
     //NSLog(@"x:%f\ny:%f\nz:%f\n\n", acceleration.x, acceleration.y, acceleration.z);
@@ -131,6 +133,7 @@
     }
     
     if (gotScore) {
+        NSLog(@"%@: add score", ble.currentClient.name);
         [[ble currentClient] addScore];
         AudioServicesPlaySystemSound(self.shakeSound);
     }

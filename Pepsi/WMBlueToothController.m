@@ -85,6 +85,7 @@
             
             NSArray *keys = [self.peripherals allKeysForObject:@{@"pKey":peripheral}];
             client.name = [[keys objectAtIndex:0]objectForKey:CBAdvertisementDataLocalNameKey];
+            NSLog(@"client did join: %@", client.name);
             client.peripheral = peripheral;
             client.peripheral.delegate = self;
             [client.peripheral discoverServices:@[kAppServiceUUID]];
@@ -110,7 +111,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _gameDuration = 10;
+        _gameDuration = 30;
         _minimumPeopleCount = 0;
         _currentTime = 0;
         _clients = [NSMutableArray array];
@@ -160,10 +161,13 @@
 
 - (void)startGame {
     self.currentTime = 0;
-    [self sendMessage:@"start"];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(gameDidStart)]) {
-        [self.delegate gameDidStart];
+    if (self.isServer) {
+        [self sendMessage:@"start"];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(gameDidStart)]) {
+            [self.delegate gameDidStart];
+        }
     }
+
     
     [self performSelector:@selector(startToRefreshTimer) withObject:nil afterDelay:5.0f];
 
@@ -226,6 +230,7 @@
         else {
             // Send only client self to server
             NSString *scoreString = [[NSString alloc] initWithFormat:@"selfscore::%@-:%d", self.currentClient.name, self.currentClient.score];
+            
             [self sendMessage:scoreString];
         }
     }
@@ -504,13 +509,12 @@
                 client.messageToSend = nil;
             }
             if (client.sendMessageCharacteristic != nil) {
-
-            client.messageToSend = [[NSString stringWithFormat:@"%@", message] dataUsingEncoding:NSUTF8StringEncoding];
-            NSLog(@"sendMsg Client:%@", client.name);
-//            if (client.sendMessageCharacteristic == nil) {
-//                return;
-//            }
-            
+                client.messageToSend = [[NSString stringWithFormat:@"%@", message] dataUsingEncoding:NSUTF8StringEncoding];
+                NSLog(@"sendMsg Client:%@", client.name);
+                //            if (client.sendMessageCharacteristic == nil) {
+                //                return;
+                //            }
+                
                 client.sendMessageIndex = 0;
                 client.lastAmountMessageToSend = 0;
                 [self handleSendingMessage];
