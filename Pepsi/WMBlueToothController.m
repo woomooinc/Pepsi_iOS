@@ -185,8 +185,9 @@
 
 - (void)refresh {
     self.currentTime++;
-    NSString * speechString = [NSString stringWithFormat:@"%i", self.currentTime];
-    BOOL timesup = (self.currentTime >= self.gameDuration)?YES:NO;
+    NSInteger countdown = self.gameDuration - self.currentTime;
+    NSString * speechString = [NSString stringWithFormat:@"%li", (long)countdown];
+    BOOL timesup = (0 >= countdown)?YES:NO;
     
     if (timesup) {
         speechString = @"Times Up!";
