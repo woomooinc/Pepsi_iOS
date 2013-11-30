@@ -27,38 +27,43 @@
 {
     [super viewDidLoad];
     
-    UIAccelerometer *accel = [UIAccelerometer sharedAccelerometer];
-    accel.delegate = self;
-    accel.updateInterval = 0.3f;
-    
-    self.hasWinner = NO;
-    self.isPlaying = NO;
-    WMBlueToothController * ble = [WMBlueToothController sharedController];
-    ble.delegate = self;
     
     // Setup the music of leave play mode
     NSString *soundPath = [[[NSBundle mainBundle] pathForResource:@"mb_coin" ofType:@"m4a"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *soundURL = [NSURL URLWithString:soundPath];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &_shakeSound);
     
-    if (self.isHost) {
-        self.navigationItem.leftBarButtonItem.enabled = YES;
-        self.startButton.enabled = YES;
-        ble.minimumPeopleCount = self.peopleCount;
-        [ble startBroadcast];
-        [ble joinWithClient:[WMClient currentClient]];
-    } else {
-        self.navigationItem.leftBarButtonItem.enabled = NO;
-        self.startButton.enabled = NO;
-        self.peopleCount = [ble minimumPeopleCount];
-        [ble clientWantToGetAllUsers];
-    }
+    UIAccelerometer *accel = [UIAccelerometer sharedAccelerometer];
+    accel.delegate = self;
+    accel.updateInterval = 0.3f;
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [[WMBlueToothController sharedController] setDelegate:nil];
     [[UIAccelerometer sharedAccelerometer] setDelegate:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.hasWinner = NO;
+    self.isPlaying = NO;
+    WMBlueToothController * ble = [WMBlueToothController sharedController];
+    ble.delegate = self;
+    
+    if (self.isHost) {
+        self.navigationItem.leftBarButtonItem.enabled = YES;
+        self.startButton.enabled = YES;
+        ble.minimumPeopleCount = self.peopleCount;
+        [ble startBroadcast];
+        ble.currentClient = [WMClient currentClient];
+        [ble joinWithClient:ble.currentClient];
+    } else {
+        self.navigationItem.leftBarButtonItem.enabled = NO;
+        self.startButton.enabled = NO;
+        self.peopleCount = [ble minimumPeopleCount];
+        [ble clientWantToGetAllUsers];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -150,6 +155,8 @@
     if ([WMClient currentClient] == [[ble clients] objectAtIndex:0]) {
         // make sound
     }
+    
+    [self performSegueWithIdentifier:@"prepareRoomGotoResult" sender:self];
 }
 
 - (void)gameDidStart {
@@ -166,7 +173,7 @@
     [syn speakUtterance:utterance];
 }
 
-- (void)didRefresh:(NSArray *)clientArray {
+- (void)didRefresh {
     [self.collectionView reloadData];
 }
 

@@ -205,6 +205,10 @@
         }
     }
     else {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didRefresh)]) {
+            [self.delegate didRefresh];
+        }
+        
         if (self.isServer) {
             // Send all scores to client
             NSMutableString *scoreAndNameString = [[NSMutableString alloc] initWithString:@"score"];
@@ -590,6 +594,10 @@
             NSLog(@"Sent: %@", stringFromData);
         }
     }
+}
+
+- (WMClient*)winner {
+    return [self.clients objectAtIndex:0];
 }
 
 @end

@@ -29,6 +29,7 @@
 		120DDF3D18491454000590D0 /* shao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 120DDF3218491454000590D0 /* shao@2x.png */; };
 		120DDF401849151F000590D0 /* WMIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF3F1849151F000590D0 /* WMIntroViewController.m */; };
 		120DDF4318492119000590D0 /* WMWinnerViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF4218492119000590D0 /* WMWinnerViewFlowLayout.m */; };
+		120DDF4918498E7B000590D0 /* WMResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 120DDF4818498E7B000590D0 /* WMResultViewController.m */; };
 		1252E4FE1848707500F1B345 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E4FD1848707500F1B345 /* Foundation.framework */; };
 		1252E5001848707500F1B345 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E4FF1848707500F1B345 /* CoreGraphics.framework */; };
 		1252E5021848707500F1B345 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1252E5011848707500F1B345 /* UIKit.framework */; };
@@ -88,6 +89,8 @@
 		120DDF3F1849151F000590D0 /* WMIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMIntroViewController.m; sourceTree = "<group>"; };
 		120DDF4118492119000590D0 /* WMWinnerViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMWinnerViewFlowLayout.h; sourceTree = "<group>"; };
 		120DDF4218492119000590D0 /* WMWinnerViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMWinnerViewFlowLayout.m; sourceTree = "<group>"; };
+		120DDF4718498E7B000590D0 /* WMResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMResultViewController.h; sourceTree = "<group>"; };
+		120DDF4818498E7B000590D0 /* WMResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMResultViewController.m; sourceTree = "<group>"; };
 		1252E4FA1848707500F1B345 /* Winner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Winner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1252E4FD1848707500F1B345 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1252E4FF1848707500F1B345 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,6 +165,8 @@
 				120DDF1A1848E80A000590D0 /* WMClientDialogViewController.m */,
 				120DDF3E1849151F000590D0 /* WMIntroViewController.h */,
 				120DDF3F1849151F000590D0 /* WMIntroViewController.m */,
+				120DDF4718498E7B000590D0 /* WMResultViewController.h */,
+				120DDF4818498E7B000590D0 /* WMResultViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				120DDF4318492119000590D0 /* WMWinnerViewFlowLayout.m in Sources */,
+				120DDF4918498E7B000590D0 /* WMResultViewController.m in Sources */,
 				1252E50E1848707500F1B345 /* WMAppDelegate.m in Sources */,
 				120DDF401849151F000590D0 /* WMIntroViewController.m in Sources */,
 				120DDF031848AA3A000590D0 /* WMHostInitViewController.m in Sources */,
