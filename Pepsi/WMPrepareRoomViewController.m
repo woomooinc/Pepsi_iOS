@@ -113,7 +113,7 @@
 #pragma mark - UIAccelerometerDelegate
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
-//    if (!self.isPlaying) return;
+    if (!self.isPlaying) return;
     
     WMBlueToothController * ble = [WMBlueToothController sharedController];
     //NSLog(@"x:%f\ny:%f\nz:%f\n\n", acceleration.x, acceleration.y, acceleration.z);
