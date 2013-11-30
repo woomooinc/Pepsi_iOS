@@ -39,6 +39,7 @@
 @property (nonatomic, assign) CGFloat gameDuration;
 @property (nonatomic, assign) NSInteger minimumPeopleCount; // if minimumPeopleCount != 0, startGame automatically when self.clients.count >= peopleCount
 @property(nonatomic, weak) id<WMBlueToothDelegate> delegate;
+@property(nonatomic, strong) WMClient * currentClient;
 + (id)sharedController;
 - (void)startBroadcast;
 - (void)startGame;

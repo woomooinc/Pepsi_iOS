@@ -76,6 +76,9 @@
         WMClient *client = [[WMClient alloc] init];
         client.name = [a objectAtIndex:i];
         [ble.clients addObject:client];
+        if ([client.name isEqualToString:[[UIDevice currentDevice] name]] ) {
+            ble.currentClient = client;
+        }
     }
     self.peopleCount = [ble.clients count];
     [self.collectionView reloadData];
@@ -86,6 +89,7 @@
 {
     if (!self.isPlaying) return;
     
+    WMBlueToothController * ble = [WMBlueToothController sharedController];
     //NSLog(@"x:%f\ny:%f\nz:%f\n\n", acceleration.x, acceleration.y, acceleration.z);
     
     BOOL gotScore = NO;
@@ -106,7 +110,7 @@
     }
     
     if (gotScore) {
-        [[WMClient currentClient] addScore];
+        [[ble currentClient] addScore];
         AudioServicesPlaySystemSound(self.shakeSound);
     }
 
@@ -168,7 +172,7 @@
         placeholder = client.placeholder;
     }
 
-    [cell configureCellWithAvatarURL:avatar name:name score:score placeholder:placeholder];
+    [cell configureCellWithClient:client];
     
     if (self.hasWinner) {
         if (indexPath.row == 0) {
@@ -188,6 +192,7 @@
     return 1;
 }
 
+/*
 #pragma mark --
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.hasWinner && 0 == indexPath.row) {
@@ -197,6 +202,7 @@
         return CGSizeMake(80, 100);
     }
 }
+ */
 
 #pragma IBAction
 - (IBAction)onStartButton:(id)sender {
