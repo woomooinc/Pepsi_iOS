@@ -240,6 +240,47 @@
     [_locationManager stopMonitoringForRegion:region];
 }
 
+- (void)clientWantToGetAllUsers {
+    [self sendMessage:@"alluser"];
+}
+
+- (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    if (!self.isServer) {
+        return;
+    }
+    if ([characteristic.UUID isEqual:kSendMessageCharacteristicUUID]) {
+        NSString *stringFromData = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+
+        for (WMClient *client in self.clients) {
+            if ([peripheral.identifier isEqual:client.peripheral.identifier]) {
+                // Have we got everything we need?
+                if ([stringFromData isEqualToString:@"EOM"]) {
+                    
+                    NSString *msg = [[NSString alloc] initWithData:client.messageToReceive encoding:NSUTF8StringEncoding];
+                    if ([msg isEqualToString:@"alluser"]) {
+                        NSMutableString *str = [[NSMutableString alloc] initWithString:@"user"];
+                        for (WMClient *client in self.clients) {
+                            [str appendFormat:@"::%@", client.name];
+                        }
+                        [self sendMessage:[NSString stringWithString:str]];
+                    }
+                    [client.messageToReceive setLength:0];
+                }
+                else {
+                    // Otherwise, just add the data on to what we already have
+                    [client.messageToReceive appendData:characteristic.value];
+                }
+                
+                // Log it
+                NSLog(@"Received: %@", stringFromData);
+            }
+
+        
+        }
+    }
+
+}
+
 - (void)clientStartToBroadcast {
     if ([self.peripheralManager isAdvertising]) {
         [self.peripheralManager stopAdvertising];
@@ -400,7 +441,10 @@
                 if ([message isEqualToString:@"start"] && [self.delegate respondsToSelector:@selector(serverDidReply)]) {
                     [self.delegate serverDidReply];
                 }
-//                self.otherLabel.text = message;
+                
+                if ([message hasPrefix:@"user::"]) {
+                    [self.delegate didGetAllUser:message];
+                }
                 
                 [self.messageToReceive setLength:0];
             }

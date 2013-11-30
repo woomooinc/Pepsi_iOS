@@ -50,6 +50,7 @@
         self.navigationItem.leftBarButtonItem.enabled = NO;
         self.startButton.enabled = NO;
         self.peopleCount = [ble minimumPeopleCount];
+        [ble clientWantToGetAllUsers];
     }
 }
 
@@ -63,6 +64,21 @@
     [super viewDidAppear:animated];
 }
 
+- (void)didGetAllUser:(NSString *)userString {
+    NSLog(@"%@", userString);
+    
+    WMBlueToothController * ble = [WMBlueToothController sharedController];
+    [ble.clients removeAllObjects];
+    
+    NSArray *a = [userString componentsSeparatedByString:@"::"];
+    for (int i=1; i<[a count]; i++) {
+        WMClient *client = [[WMClient alloc] init];
+        client.name = [a objectAtIndex:i];
+        [ble.clients addObject:client];
+    }
+    self.peopleCount = [ble.clients count];
+    [self.collectionView reloadData];
+}
 
 #pragma mark - UIAccelerometerDelegate
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration

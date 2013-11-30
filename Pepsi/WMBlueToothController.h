@@ -31,6 +31,7 @@
 
 - (void)clientDidReject:(WMClient*)client;
 - (void)clientDidLeave:(WMClient*)client;
+- (void)didGetAllUser:(NSString *)userString;
 @end
 
 @interface WMBlueToothController : NSObject
@@ -45,4 +46,5 @@
 - (void)sendToServerWithResult:(NSInteger)score;
 - (NSInteger)totalScore;
 - (void)clientStartToBroadcast;
+- (void)clientWantToGetAllUsers;
 @end
