@@ -27,7 +27,7 @@
 - (void)serverDidReply;
 - (void)gameDidStart;
 - (void)gameDidFinish; // an ordered array of client
-- (void)didRefresh:(NSArray*)clientArray;
+- (void)didRefresh;
 
 - (void)clientDidReject:(WMClient*)client;
 - (void)clientDidLeave:(WMClient*)client;
@@ -49,4 +49,5 @@
 - (NSInteger)totalScore;
 - (void)clientStartToBroadcast;
 - (void)clientWantToGetAllUsers;
+- (WMClient*)winner;
 @end
