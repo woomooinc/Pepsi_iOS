@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface WMPlayViewController : UIViewController
-
+@property (nonatomic, strong) IBOutlet UILabel * remindingLabel;
+@property (nonatomic, strong) IBOutlet UILabel * scoreLabel;
 @end
