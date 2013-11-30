@@ -18,6 +18,7 @@
 @property (nonatomic, assign) BOOL isUp;
 @property (nonatomic, assign) BOOL isDown;
 @property (nonatomic, assign) BOOL hasWinner;
+@property (nonatomic, assign) NSInteger score;
 @end
 
 @implementation WMPrepareRoomViewController
@@ -50,6 +51,7 @@
     self.isPlaying = NO;
     WMBlueToothController * ble = [WMBlueToothController sharedController];
     ble.delegate = self;
+    self.score = 0;
     
     if (self.isHost) {
         self.navigationItem.leftBarButtonItem.enabled = YES;
@@ -57,7 +59,7 @@
         ble.minimumPeopleCount = self.peopleCount;
         [ble startBroadcast];
         ble.currentClient = [WMClient currentClient];
-        [ble joinWithClient:ble.currentClient];
+        [ble joinWithClient: ble.currentClient];
     } else {
         self.navigationItem.leftBarButtonItem.enabled = NO;
         self.startButton.enabled = NO;
@@ -72,6 +74,7 @@
 
 - (void)didGetAllUser:(NSString *)userString {
     NSLog(@"%@", userString);
+    self.score = 0;
     
     WMBlueToothController * ble = [WMBlueToothController sharedController];
     [ble.clients removeAllObjects];
@@ -134,7 +137,8 @@
     
     if (gotScore) {
         NSLog(@"%@: add score", ble.currentClient.name);
-        [[ble currentClient] addScore];
+        self.score++;
+        ble.currentClient.score = self.score;
         AudioServicesPlaySystemSound(self.shakeSound);
     }
 
@@ -165,6 +169,7 @@
 }
 
 - (void)gameDidStart {
+    self.score = 0;
     self.hasWinner = NO;
     self.peopleCount = [[[WMBlueToothController sharedController] clients] count];
     [self.collectionView reloadData];
