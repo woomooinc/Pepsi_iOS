@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <CoreBluetooth/CoreBluetooth.h>
 
 extern NSString * const kWMName;
 extern NSString * const kWMAvatar;
@@ -17,6 +17,14 @@ extern NSString * const kWMAvatar;
 @property(nonatomic, strong) NSString * avatarPath;
 @property(nonatomic, assign) NSInteger score;
 @property(nonatomic, strong) UIImage * placeholder;
+@property (nonatomic, strong) CBPeripheral *peripheral;
+@property (nonatomic, assign)BOOL isEOM;
+@property (strong, nonatomic) CBCharacteristic *sendMessageCharacteristic;
+@property (strong, nonatomic) NSMutableData *messageToReceive;
+@property (strong, nonatomic) NSData *messageToSend;
+@property (nonatomic, readwrite) NSInteger sendMessageIndex;
+@property (nonatomic, readwrite) NSInteger lastAmountMessageToSend;
+
 + (id)currentClient;
 - (void)addScore;
 @end

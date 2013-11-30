@@ -53,6 +53,8 @@ NSString * const kWMAvatar = @"kWMAvatar";
                 _placeholder = [UIImage imageNamed:@"jason"];
                 break;
         }
+        self.messageToReceive = [[NSMutableData alloc] init];
+        self.messageToSend = [[NSData alloc] init];
     }
     return self;
 }

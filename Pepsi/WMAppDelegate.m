@@ -56,6 +56,9 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     UIViewController *vc = [storyboard instantiateInitialViewController];
     self.window.rootViewController = vc;
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+
     return YES;
 }
 

@@ -14,7 +14,7 @@
 
 #define kSendMessageCharacteristicUUID      [CBUUID UUIDWithString:@"9AAA4C67-8162-4BCD-A093-BA1C78A5222F"]
 #define kReceiveMessageMessageCharacteristicUUID      [CBUUID UUIDWithString:@"04CFE68F-A1C2-4F1B-B385-A162A0CB4215"]
-#define kBeaconUUID      [[NSUUID alloc] initWithUUIDString:@"68A7E55A-29E1-47DE-BD81-E7CFFB60D3BB"]
+#define kBeaconUUID      [[NSUUID alloc] initWithUUIDString:@"A42A0CFD-B994-41F0-B39C-2BEFA38913D2"]
 
 #define NOTIFY_MTU  20
 #define WRITE_MAX   128
@@ -44,4 +44,5 @@
 - (void)joinWithClient:(WMClient*)client;
 - (void)sendToServerWithResult:(NSInteger)score;
 - (NSInteger)totalScore;
+- (void)clientStartToBroadcast;
 @end

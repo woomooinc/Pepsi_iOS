@@ -26,6 +26,7 @@
     // @howard client broadcast to server?
     WMBlueToothController * ble = [WMBlueToothController sharedController];
     ble.delegate = self;
+    [ble clientStartToBroadcast];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
