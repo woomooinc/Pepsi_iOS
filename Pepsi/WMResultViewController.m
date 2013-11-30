@@ -26,6 +26,7 @@
                 placeholderImage:winner.placeholder
                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
                        }];
+    self.name.text = winner.name;
     self.avatar.layer.cornerRadius = self.avatar.frame.size.width / 2;
     self.avatar.layer.masksToBounds = YES;
 }

@@ -151,10 +151,12 @@
     [self.collectionView reloadData];
     // show winner effect!
     
+    /*
     WMBlueToothController * ble = [WMBlueToothController sharedController];
     if ([WMClient currentClient] == [[ble clients] objectAtIndex:0]) {
         // make sound
     }
+     */
     
     [self performSegueWithIdentifier:@"prepareRoomGotoResult" sender:self];
 }

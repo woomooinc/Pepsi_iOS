@@ -597,7 +597,18 @@
 }
 
 - (WMClient*)winner {
-    return [self.clients objectAtIndex:0];
+    WMClient * winner;
+    for (WMClient * client in self.clients) {
+        if (!winner) {
+            winner = client;
+        }
+        else {
+            if (client.score > winner.score) {
+                winner = client;
+            }
+        }
+    }
+    return winner;
 }
 
 @end
